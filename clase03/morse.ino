@@ -1,6 +1,6 @@
 //LED_MORSE, Andres Cruz, 23 agosto 2025
 //Convierte cualquier texto a morse en pulsos de led
-
+// https://es.wikipedia.org/wiki/Frecuencia_de_aparici%C3%B3n_de_letras
 const int tiempoPunto   = 300 ;
 const int tiempoRaya    = tiempoPunto*3;
 const int tiempoLetra   = tiempoPunto*2; //3 veces 1U pero se agraga con intracaracter 
@@ -474,4 +474,5 @@ void raya(){
   digitalWrite(LED_PIN, LOW);   // turn the LED off by making the voltage LOW
   delay(tiempoPunto);
 }
+
 
