@@ -29,168 +29,172 @@ void morse(char x) {
   if( x >= 'a' && x <= 'z'){
     x = x - ' ';
   }
+//Se ordena segun el uso en español
+//e, a, o, s, r, n, i, d, l, c, t, u, m, p, b, g, v, y, q, h, f, z, j, ñ, x, k, w. 
 
   switch (x) {
-    case 'A'://A .-
-    punto();
-    raya();
-    delay(tiempoLetra);
-    break;
-    case 'B'://B -...
-    raya();
-    punto();
-    punto();
-    punto();
-    delay(tiempoLetra);
-    break;
-    case 'C'://C -.-.
-    raya();
-    punto();
-    raya();
-    punto();
-    delay(tiempoLetra);
-    break;
-    case 'D'://D -..
-    raya();
-    punto();
-    punto();
-    delay(tiempoLetra);
-    break;
+
     case 'E'://E .
-    punto();
-    delay(tiempoLetra);
-    break;
-    case 'F'://F ..-.
-    punto();
-    punto();
-    raya();
-    punto();
-    delay(tiempoLetra);
-    break;
-    case 'G'://G --.
-    raya();
-    raya();
-    punto();
-    delay(tiempoLetra);
-    break;
-    case 'H'://H ....
-    punto();
-    punto();
-    punto();
-    punto();
-    delay(tiempoLetra);
-    break;
-    case 'I'://I ..
-    punto();
-    punto();
-    delay(tiempoLetra);
-    break;
-    case 'J'://J .---
-    punto();
-    raya();
-    raya();
-    raya();
-    delay(tiempoLetra);
-    break;
-    case 'K'://K -.-
-    raya();
-    punto();
-    raya();
-    delay(tiempoLetra);
-    break;
-    case 'L'://L .-..
-    punto();
-    raya();
-    punto();
-    punto();
-    delay(tiempoLetra);
-    break;
-    case 'M'://M --
-    raya();
-    raya();
-    delay(tiempoLetra);
-    break;
-    case 'N'://N -.
-    raya();
-    punto();
-    delay(tiempoLetra);
-    break;
+      punto();
+      delay(tiempoLetra);
+      break;
+    case 'A'://A .-
+      punto();
+      raya();
+      delay(tiempoLetra);
+      break;
     case 'O'://O ---
-    raya();
-    raya();
-    raya();
-    delay(tiempoLetra);
-    break;
-    case 'P'://P .--.
-    punto();
-    raya();
-    raya();
-    punto();
-    delay(tiempoLetra);
-    break;
-    case 'Q'://Q --.-
-    raya();
-    raya();
-    punto();
-    raya();
-    delay(tiempoLetra);
-    break;
-    case 'R'://R .-.
-    punto();
-    raya();
-    punto();
-    delay(tiempoLetra);
-    break;
+      raya();
+      raya();
+      raya();
+      delay(tiempoLetra);
+      break;
     case 'S'://S ...
-    punto();
-    punto();
-    punto();
-    delay(tiempoLetra);
-    break;
+      punto();
+      punto();
+      punto();
+      delay(tiempoLetra);
+      break;
+    case 'R'://R .-.
+      punto();
+      raya();
+      punto();
+      delay(tiempoLetra);
+      break;
+    case 'N'://N -.
+      raya();
+      punto();
+      delay(tiempoLetra);
+      break;
+    case 'I'://I ..
+      punto();
+      punto();
+      delay(tiempoLetra);
+      break;
+    case 'D'://D -..
+      raya();
+      punto();
+      punto();
+      delay(tiempoLetra);
+      break;
+    case 'L'://L .-..
+      punto();
+      raya();
+      punto();
+      punto();
+      delay(tiempoLetra);
+      break;
+    case 'C'://C -.-.
+      raya();
+      punto();
+      raya();
+      punto();
+      delay(tiempoLetra);
+      break;
     case 'T'://T -
-    raya();
-    delay(tiempoLetra);
-    break;
+      raya();
+      delay(tiempoLetra);
+      break;
     case 'U'://U ..-
-    punto();
-    punto();
-    raya();
-    delay(tiempoLetra);
-    break;
+      punto();
+      punto();
+      raya();
+      delay(tiempoLetra);
+      break;
+    case 'M'://M --
+      raya();
+      raya();
+      delay(tiempoLetra);
+      break;
+    case 'P'://P .--.
+      punto();
+      raya();
+      raya();
+      punto();
+      delay(tiempoLetra);
+      break;
+    case 'B'://B -...
+      raya();
+      punto();
+      punto();
+      punto();
+      delay(tiempoLetra);
+      break;
+    case 'G'://G --.
+      raya();
+      raya();
+      punto();
+      delay(tiempoLetra);
+      break;
     case 'V'://V ...-
-    punto();
-    punto();
-    punto();
-    raya();
-    delay(tiempoLetra);
-    break;
-    case 'W'://W .--
-    punto();
-    raya();
-    raya();
-    delay(tiempoLetra);
-    break;
-    case 'X'://X -..-
-    raya();
-    punto();
-    punto();
-    raya();
-    delay(tiempoLetra);
-    break;
+      punto();
+      punto();
+      punto();
+      raya();
+      delay(tiempoLetra);
+      break;
     case 'Y'://Y -.--
-    raya();
-    punto();
-    raya();
-    raya();
-    delay(tiempoLetra);
-    break;
+      raya();
+      punto();
+      raya();
+      raya();
+      delay(tiempoLetra);
+      break;
+    case 'Q'://Q --.-
+      raya();
+      raya();
+      punto();
+      raya();
+      delay(tiempoLetra);
+      break;
+    case 'H'://H ....
+      punto();
+      punto();
+      punto();
+      punto();
+      delay(tiempoLetra);
+      break;
+    case 'F'://F ..-.
+      punto();
+      punto();
+      raya();
+      punto();
+      delay(tiempoLetra);
+      break;
     case 'Z'://Z --..
-    raya();
-    raya();
-    punto();
-    punto();
-    delay(tiempoLetra);
-    break;
+      raya();
+      raya();
+      punto();
+      punto();
+      delay(tiempoLetra);
+      break;
+        case 'J'://J .---
+      punto();
+      raya();
+      raya();
+      raya();
+      delay(tiempoLetra);
+      break;
+    case 'X'://X -..-
+      raya();
+      punto();
+      punto();
+      raya();
+      delay(tiempoLetra);
+      break;
+    case 'K'://K -.-
+      raya();
+      punto();
+      raya();
+      delay(tiempoLetra);
+      break;
+    case 'W'://W .--
+      punto();
+      raya();
+      raya();
+      delay(tiempoLetra);
+      break;
+    //------------------------------------------
     
     case '0':
     raya();
@@ -474,5 +478,6 @@ void raya(){
   digitalWrite(LED_PIN, LOW);   // turn the LED off by making the voltage LOW
   delay(tiempoPunto);
 }
+
 
 
