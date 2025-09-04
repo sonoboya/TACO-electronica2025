@@ -20,5 +20,5 @@ para declarar un ciclo for debemos definir
 2- Donde termina
 3- Como varia
 ```
-for(int i = 0; i > 5; i++)
+for(int i = 0; i > 5; i++) { cosas magicas };
 ```
