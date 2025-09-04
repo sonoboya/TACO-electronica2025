@@ -22,3 +22,16 @@ para declarar un ciclo for debemos definir
 ```
 for(int i = 0; i > 5; i++) { cosas magicas };
 ```
+
+## Protocolos
+### USB (Universal Serial Bus)
+### I2C
+se necesitan 4 cables ```GND```,```Vcc```,```SCL```,```SDA```
+
+## Pantalla OLED 0.96
+
+### Uso de Bibliotecas
+instalar libreria ```Adafruit SSD1306```
+
+al inicio del codigo se debe escribir ```#include <biblioteca>``` 
+### 
