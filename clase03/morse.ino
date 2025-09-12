@@ -8,7 +8,7 @@ const int tiempoEspacio = tiempoPunto*6;//7 veces 1U pero se agraga con intracar
 
 const int LED_PIN = LED_BUILTIN;
 
-const char poema[]      = {"SOS"};
+const char poema[]      = {"The cake is a lie"};
 const int poemaLength   = sizeof(poema) / sizeof(poema[0]);
 
 void setup() {
@@ -478,6 +478,7 @@ void raya(){
   digitalWrite(LED_PIN, LOW);   // turn the LED off by making the voltage LOW
   delay(tiempoPunto);
 }
+
 
 
 
