@@ -3,9 +3,9 @@ github: este
 
 referentes:
 
-Paweł Zadrożniak [Floppotron]<https://www.youtube.com/@PaweZadrozniak>
+Paweł Zadrożniak [Floppotron](https://www.youtube.com/@PaweZadrozniak)
 
-Sam James Battle [look mom no computer]<https://www.lookmumnocomputer.com/>
+Sam James Battle [look mom no computer](https://www.lookmumnocomputer.com/)
 
 ## Encargo 2
 
