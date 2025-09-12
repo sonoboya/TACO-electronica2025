@@ -9,4 +9,5 @@ Sam James Battle [look mom no computer](https://www.lookmumnocomputer.com/)
 
 ## Encargo 2
 
-> "The cake is a lie - Doug Rattmann".
+> "The cake is a lie".
+>  - Doug Rattmann, Portal (2007)
