@@ -18,9 +18,10 @@ Adafruit_SSD1306 display(ANCHO_PANTALLA, ALTO_PANTALLA, &Wire);
 
 
 int pos; 
-int t1, t0 = 0; 
+unsigned long t1, t0; 
 float posX = 64, posY = 32;
 int velX = VEL, velY = VEL;
+int score = 0;
 
 
 void setup() {
@@ -34,21 +35,40 @@ void setup() {
 
   display.clearDisplay(); // Make sure the display is cleared
   display.display();
+
+  display.setTextSize(1);             // tamaño del texto
+  display.setTextColor(SSD1306_WHITE);// color del texto
+  display.setCursor(ANCHO_PANTALLA/2, ALTO_PANTALLA/2);          // posición (x,y)
+  display.println("holitas");      // escribir texto
+  display.display();
+  delay(2000);
+
+  t0 = millis();
 }
 
 void loop() {
   t1 = millis();
   display.clearDisplay();
 
-  display.drawRect(0, 0, display.width(), display.height()+1, SSD1306_WHITE);
-
-  pos = map(analogRead(POT_PIN), 0, 1020, 0, 128-BARRA_LEN);
-  display.fillRect(pos, display.height()-BARRA_OFFSET, BARRA_LEN, BARRA_ALTURA, SSD1306_WHITE);
-
+  ui();
+  barra();
   bola();
 
   display.display();
   t0 = t1;
+}
+
+void ui(){
+  display.drawRect(0, 0, display.width(), display.height()+1, SSD1306_WHITE);
+  display.setTextSize(1);             // tamaño del texto
+  display.setTextColor(SSD1306_WHITE);// color del texto
+  display.setCursor(ANCHO_PANTALLA/2, ALTO_PANTALLA/2);          // posición (x,y)
+  display.println(score);
+}
+
+void barra(){
+  pos = map(analogRead(POT_PIN), 0, 1020, 0, 128-BARRA_LEN);
+  display.fillRect(pos, display.height()-BARRA_OFFSET, BARRA_LEN, BARRA_ALTURA, SSD1306_WHITE);
 }
 
 void bola(){
@@ -70,9 +90,13 @@ void bola(){
   }
 
   if (posY > (display.height()  - R - BARRA_OFFSET) && posY < (display.height()  - R) && posX > pos && posX < pos+BARRA_LEN) {
+    score++;
     velY = -(velY + 10);
-    if (velX > 0){velX += 5;}
-    else{velX -= 5;}
+    if (velX > 0){velX += 5;} else{velX -= 5;}
     posY = posY + (float)velY * (float)(t1-t0)/1000;
-  } 
+  } else if (posY < display.height()) {pierdes();}
+}
+
+void pierdes(){
+
 }
