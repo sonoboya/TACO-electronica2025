@@ -130,6 +130,13 @@ void bola(){
 
 void pierdes(){
   display.clearDisplay();
+
+  display.setCursor(40, 32);         
+  display.println("HAS PERDIDO :(");
+  display.display();
+  delay(2000);
+  
+  display.clearDisplay();
   velX = 0; velY = 0;
   posX = 32; posY = 32 + 2* R;
   display.fillCircle(posX, posY, R, SSD1306_WHITE);
