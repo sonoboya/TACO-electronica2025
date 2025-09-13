@@ -1,3 +1,5 @@
+//conectar pantalla OLED y potenciometro en pin A0 a 5V
+
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
@@ -19,10 +21,21 @@ Adafruit_SSD1306 display(ANCHO_PANTALLA, ALTO_PANTALLA, &Wire);
 
 int pos; 
 unsigned long t1, t0; 
-float posX = 64, posY = 32;
+float posX = 64, posY = 32, fps;
 int velX = VEL, velY = VEL;
 int score = 0;
 
+const char* mensajes[] = {
+  " ",
+  "Wow",
+  "Boom!",
+  "GG!",
+  "Epico!",
+  "Ultra!",
+  "Pro!!",
+  "Crack!!!",
+  "G O D L I K E"
+};
 
 void setup() {
      Serial.begin(9600);
@@ -39,7 +52,11 @@ void setup() {
   display.setTextSize(1);             // tamaño del texto
   display.setTextColor(SSD1306_WHITE);// color del texto
   display.setCursor(ANCHO_PANTALLA/2, ALTO_PANTALLA/2);          // posición (x,y)
-  display.println("holitas");      // escribir texto
+  display.println("holitas"+(char)score);      // escribir texto
+  display.display();
+  delay(2000);
+  display.setCursor(ANCHO_PANTALLA/2, (ALTO_PANTALLA/2)-10);          // posición (x,y)
+  display.println("pong");      // escribir texto
   display.display();
   delay(2000);
 
@@ -59,11 +76,23 @@ void loop() {
 }
 
 void ui(){
-  display.drawRect(0, 0, display.width(), display.height()+1, SSD1306_WHITE);
-  display.setTextSize(1);             // tamaño del texto
+  //borde
+  display.drawRect(0, 0, display.width(), display.height()+1, SSD1306_WHITE); 
+  //score
+  display.setTextSize(1);             
   display.setTextColor(SSD1306_WHITE);// color del texto
-  display.setCursor(ANCHO_PANTALLA/2, ALTO_PANTALLA/2);          // posición (x,y)
-  display.println(score);
+  display.setCursor(ANCHO_PANTALLA/2, ALTO_PANTALLA/2);         
+  //display.println(score);
+
+  //fps
+  /*fps = 1000.0/(t1-t0);
+  display.setCursor(ANCHO_PANTALLA/2, ALTO_PANTALLA/2+10);         
+  display.println(fps);
+  */
+  display.setCursor(ANCHO_PANTALLA/2-30, ALTO_PANTALLA/3);
+  if (score < 50)       {   
+    display.println(mensajes[map(score,0,50,0,8)]);
+  } else {display.println(mensajes[8]);}
 }
 
 void barra(){
@@ -89,14 +118,25 @@ void bola(){
     posY = posY + (float)velY * (float)(t1-t0)/1000;
   }
 
-  if (posY > (display.height()  - R - BARRA_OFFSET) && posY < (display.height()  - R) && posX > pos && posX < pos+BARRA_LEN) {
+  if (posY > (display.height()  - R - BARRA_OFFSET) && posY < (display.height()) && posX > pos && posX < pos+BARRA_LEN) {
     score++;
-    velY = -(velY + 10);
-    if (velX > 0){velX += 5;} else{velX -= 5;}
+    if (score < 10){
+      velY = -(velY + 10);
+      if (velX > 0){velX += 5;} else{velX -= 5;}
+    } else {velY = -velY;}
     posY = posY + (float)velY * (float)(t1-t0)/1000;
-  } else if (posY < display.height()) {pierdes();}
+  } else if (posY > display.height()) {pierdes();}
 }
 
 void pierdes(){
-
+  display.clearDisplay();
+  velX = 0; velY = 0;
+  posX = 32; posY = 32 + 2* R;
+  display.fillCircle(posX, posY, R, SSD1306_WHITE);
+  display.setCursor(40, 32);         
+  display.println("score =");
+  display.setCursor(85, 32);         
+  display.println(score);
+  display.display();
+  for(;;);
 }
