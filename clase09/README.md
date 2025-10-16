@@ -18,7 +18,8 @@ importar en excel, nombrar raw y proteger hoja
 
 luego, se copia y se "peina" (desplazar los numeros al eje positivo y normalizar)
 
+Al ingresar en Processing se debe agregar a una carpeta /data
 
+Crear una clase '''Table''' luego se inicializa  con '''loadtable'''
 
-
-
+tabla.getRowCount();  tabla.getColumnCount();  tabla.getFloat(y,x);
