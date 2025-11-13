@@ -1,8 +1,19 @@
-# Encoder
+# Clase 07
 
-Cambio, Direccion y boton
+## Pseudocodigo
 
-usar libreria Rotary encoder y ser feliz
+Codigo sin sintaxis, para ractica la logica computacional
 
-[Encoder pog sin libreria](http://adam-meyer.com/arduino/Rotary_Encoder)
+sensor       -> ```Caja negra``` -> actuador
+
+sensibilidad -> ```Caja negra``` -> agencia
+
+Universo -> Sensor -> Señal -> ```informacion/variable -> uso de la variable``` -> Drver/interfaz -> Actuador -> Fenomeno.
+
+## Camara en Procesisng
+se usa y da colorcitos
+
+## Comunicacion Serial: Arduino-Procesing
+se usa el serial y pueden interactuar, no tener ocupada la intefaz serial con otro programa
+
 
