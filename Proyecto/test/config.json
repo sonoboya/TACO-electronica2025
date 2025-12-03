@@ -1,0 +1,27 @@
+{
+  "conversion": {
+    "tolerance": 0.002,
+    "feedrate": 3600.0,
+    "dpi": 96.0,
+    "origin": [
+      60.0,
+      60.0
+    ],
+    "extra_attribute_name": null
+  },
+  "machine": {
+    "supported_functionality": {
+      "circular_interpolation": false
+    },
+    "tool_on_sequence": "G1 Z0.0 F1000   ; down",
+    "tool_off_sequence": "G1 Z2.0 F1000   ; up",
+    "begin_sequence": "; Ender 3 Custom Start G-code\n\nG28 ; Home all axes\n;G29\nM104 S0      ; no heating\nM140 S0      ; bed off\nM302 P1      ; allow cold operation\nM92 E0       ; disable extruder motor\nG1 Z5.0 F1000   ; up\n",
+    "end_sequence": "G90 ;Absolute positioning\nG1 X0 Y200 ;Present print\n"
+  },
+  "postprocess": {
+    "checksums": false,
+    "line_numbers": false,
+    "newline_before_comment": false
+  },
+  "version": "V5"
+}
